@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 
 import styles from './Characters.module.css';
 import { generateUrl } from '../../utils.js';
@@ -17,6 +17,7 @@ export default function Characters() {
     } = useFetch();
 
     const { charName } = useParams();
+    const navigate = useNavigate();
 
     //TODO error handling
 
@@ -29,13 +30,23 @@ export default function Characters() {
         })();
     }, [charName]);
 
+    const handleSearchComics = (characterId) => {
+        navigate(`/comics/${characterId}`);
+    }
+
     return (
         <>
             {loading && <Spinner />}
 
             {data.length !== 0 && (
                 <div className={styles.characters}>
-                    {data.map(character => <Character key={character.id} {...character} />)}
+                    {data.map(character => (
+                        <Character
+                            key={character.id}
+                            {...character}
+                            handleSearchComics={handleSearchComics}
+                        />
+                    ))}
                 </div>
             )}
 

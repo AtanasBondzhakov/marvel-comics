@@ -4,6 +4,7 @@ import './App.css'
 
 import Search from './components/search/Search.jsx'
 import Characters from './components/characters/Characters.jsx'
+import Comics from './components/comics/Comics.jsx'
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
 
                 <Routes>
                     <Route path='/characters/:charName' element={<Characters />} />
+                    <Route path='/comics/:characterId' element={<Comics />} />
                 </Routes>
             </div>
         </>
