@@ -5,6 +5,7 @@ import styles from './Comics.module.css';
 import useFetch from '../../hooks/useFetch.js';
 import { generateUrl } from '../../utils.js';
 import Spinner from '../spinner/Spinner.jsx';
+import ComicsItem from './comics-item/ComicsItem.jsx';
 
 export default function Comics() {
     const {
@@ -29,21 +30,7 @@ export default function Comics() {
 
             {data.length !== 0 && (
                 <div className={styles.comics}>
-                    {data.map(comicBook => {
-                        return (
-                            <div
-                                key={comicBook.id}
-                                className={styles.comicBookCard}
-                                style={{
-                                    background: `url(${comicBook.thumbnail.path}.${comicBook.thumbnail.extension})`,
-                                    backgroundSize: 'cover'
-                                }}
-                            >
-                                <div className={styles.caption}>{comicBook.title}</div>
-                                <div className={styles.captionBottom}>Comics Details</div>
-                            </div>
-                        )
-                    })}
+                    {data.map(comicBook => <ComicsItem key={comicBook.id} {...comicBook} />)}
                 </div>
             )}
 
