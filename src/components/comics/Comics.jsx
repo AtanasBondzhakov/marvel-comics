@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 
 import styles from './Comics.module.css';
 import useFetch from '../../hooks/useFetch.js';
@@ -16,13 +16,17 @@ export default function Comics() {
     } = useFetch();
 
     const { characterId } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
-            fetchData(generateUrl(`characters/${characterId}/comics`));
+            await fetchData(generateUrl(`characters/${characterId}/comics`));
         })();
     }, [characterId]);
 
+    const handleSearchComicBook = (comicBookId) => {
+        navigate(`/character/comics/${comicBookId}`);
+    }
 
     return (
         <>
@@ -30,7 +34,13 @@ export default function Comics() {
 
             {data.length !== 0 && (
                 <div className={styles.comics}>
-                    {data.map(comicBook => <ComicsItem key={comicBook.id} {...comicBook} />)}
+                    {data.map(comicBook => (
+                        <ComicsItem
+                            key={comicBook.id}
+                            {...comicBook}
+                            handleSearchComicBook={handleSearchComicBook}
+                        />
+                    ))}
                 </div>
             )}
 

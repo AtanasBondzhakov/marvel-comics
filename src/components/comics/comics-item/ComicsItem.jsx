@@ -1,8 +1,10 @@
 import styles from './ComicsItem.module.css';
 
 export default function ComicsItem({
+    id,
     thumbnail,
-    title
+    title,
+    handleSearchComicBook
 }) {
     return (
         <div
@@ -11,6 +13,7 @@ export default function ComicsItem({
                 background: `url(${thumbnail.path}.${thumbnail.extension})`,
                 backgroundSize: 'cover'
             }}
+            onClick={() => handleSearchComicBook(id)}
         >
             <div className={styles.caption}>{title}</div>
             <div className={styles.captionBottom}>Comics Details</div>
