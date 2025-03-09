@@ -6,6 +6,7 @@ import { generateUrl } from '../../utils.js';
 import useFetch from '../../hooks/useFetch.js';
 
 import Spinner from '../spinner/Spinner.jsx';
+import Character from './character/Character.jsx';
 
 export default function Characters() {
     const {
@@ -34,21 +35,7 @@ export default function Characters() {
 
             {data.length !== 0 && (
                 <div className={styles.characters}>
-                    {data.map(char => {
-                        return (
-                            <div
-                                key={char.id}
-                                className={styles.characterCard}
-                                style={{
-                                    background: `url(${char.thumbnail.path}.${char.thumbnail.extension})`,
-                                    backgroundSize: 'cover'
-                                }}
-                            >
-                                <div className={styles.caption}>{char.name}</div>
-                                <div className={styles.captionBottom}>View Comics</div>
-                            </div>
-                        )
-                    })}
+                    {data.map(character => <Character key={character.id} {...character} />)}
                 </div>
             )}
 

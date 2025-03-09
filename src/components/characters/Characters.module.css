@@ -9,55 +9,6 @@
     background-image: url(/paper.jpg);
 }
   
-.characterCard {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    border: 2px solid black;
-    box-shadow: 4px 4px black;
-    filter: grayscale(100);
-  
-    transition: 0.2s linear;
-  
-    div {
-      font-family: "Bangers", cursive;
-      font-size: 1.6rem;
-      text-align: center;
-      margin: auto auto 0 auto;
-      padding: 1rem 2rem;
-  
-      background-color: white;
-      background-image: url(/paper.jpg);
-  
-      border: 1px solid black;
-      box-shadow: 2px 2px black;
-    }
-  
-    .captionBottom {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-    }
-  
-    &:hover {
-      cursor: pointer;
-      filter: grayscale(0);
-      box-shadow: 6px 6px black;
-      transform: translate(-2px, -2px);
-  
-      .caption {
-        opacity: 0;
-      }
-  
-      .captionBottom {
-        opacity: 1;
-      }
-    }
-}
-  
 .message {
     display: flex;
     justify-content: center;
