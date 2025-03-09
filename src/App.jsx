@@ -12,7 +12,7 @@ function App() {
                 <Search />
 
                 <Routes>
-                    <Route path='/characters' element={<Characters />} />
+                    <Route path='/characters/:charName' element={<Characters />} />
                 </Routes>
             </div>
         </>

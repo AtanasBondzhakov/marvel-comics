@@ -19,7 +19,8 @@ export default function Search() {
     };
 
     const handleReset = () => {
-
+        setCharacterName('');
+        navigate('/search')
     };
 
     return (

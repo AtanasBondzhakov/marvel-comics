@@ -26,7 +26,7 @@ export default function Characters() {
                 { nameStartsWith: charName, limit: 100 }
             ));
         })();
-    }, []);
+    }, [charName]);
 
     return (
         <>
