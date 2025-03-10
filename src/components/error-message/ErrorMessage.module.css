@@ -1,0 +1,13 @@
+.errorContainer {
+    display: flex;
+    justify-content: center;
+    background-image: url(/paper.jpg);
+    max-width: 500px;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .errorContainer p {
+    font-size: 24px;
+    font-weight: 600;
+  }

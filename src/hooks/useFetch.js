@@ -22,7 +22,6 @@ export default function useFetch() {
             setData(result.data.results);
         } catch (err) {
             setError(err);
-            console.log(err);
         } finally {
             setLoading(false);
         }
