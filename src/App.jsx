@@ -6,6 +6,7 @@ import Search from './components/search/Search.jsx'
 import Characters from './components/characters/Characters.jsx'
 import Comics from './components/comics/Comics.jsx'
 import ComicBook from './components/comic-book/ComicBook.jsx'
+import Home from './components/home/Home.jsx'
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Search />
 
                 <Routes>
+                    <Route path='/' element={<Home />} />
                     <Route path='/characters/:charName' element={<Characters />} />
                     <Route path='/comics/:characterId' element={<Comics />} />
                     <Route path='/character/comics/:comicBookId' element={<ComicBook />} />

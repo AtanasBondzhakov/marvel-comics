@@ -1,0 +1,26 @@
+.characters {
+    max-width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 1rem;
+    background-color: white;
+    background-image: url(/paper.jpg);
+}
+  
+.message {
+    display: flex;
+    justify-content: center;
+    background-image: url(/paper.jpg);
+    max-width: 500px;
+    align-items: center;
+    margin: 0 auto 3em;
+}
+  
+h3 {
+    font-family: "Bangers", cursive;
+    font-size: 32px;
+    white-space: nowrap;
+    text-align: center;
+}
