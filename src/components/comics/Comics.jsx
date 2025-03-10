@@ -41,7 +41,7 @@ export default function Comics() {
                     {data.map(comicBook => (
                         <Resource
                             key={comicBook.id}
-                            title={comicBook.name}
+                            name={comicBook.title}
                             {...comicBook}
                             onClick={handleSearchComicBook}
                         />

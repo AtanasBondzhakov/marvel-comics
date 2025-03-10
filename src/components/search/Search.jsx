@@ -11,6 +11,7 @@ export default function Search() {
     const searchCharactersHandler = (e) => {
         e.preventDefault();
 
+        setCharacterName('');
         navigate(`/characters/${characterName}`)
     };
 
@@ -20,7 +21,7 @@ export default function Search() {
 
     const handleReset = () => {
         setCharacterName('');
-        navigate('/search')
+        navigate('/');
     };
 
     return (
