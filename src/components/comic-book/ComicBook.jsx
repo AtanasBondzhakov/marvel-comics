@@ -1,8 +1,10 @@
+import { useEffect } from 'react';
+import { useParams } from 'react-router';
+
 import styles from './ComicBook.module.css';
 import useFetch from '../../hooks/useFetch.js';
-import { useEffect } from 'react';
 import { generateUrl } from '../../utils.js';
-import { useParams } from 'react-router';
+
 import Spinner from '../spinner/Spinner.jsx';
 
 export default function ComicBook() {

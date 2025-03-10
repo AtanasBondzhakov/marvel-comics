@@ -6,7 +6,7 @@ import { generateUrl } from '../../utils.js';
 import useFetch from '../../hooks/useFetch.js';
 
 import Spinner from '../spinner/Spinner.jsx';
-import Character from './character/Character.jsx';
+import Resource from '../resource/Resource.jsx';
 
 export default function Characters() {
     const {
@@ -41,10 +41,10 @@ export default function Characters() {
             {data.length !== 0 && (
                 <div className={styles.characters}>
                     {data.map(character => (
-                        <Character
+                        <Resource
                             key={character.id}
                             {...character}
-                            handleSearchComics={handleSearchComics}
+                            onClick={handleSearchComics}
                         />
                     ))}
                 </div>

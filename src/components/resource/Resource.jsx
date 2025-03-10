@@ -1,19 +1,19 @@
-import styles from './Character.module.css';
+import styles from './Resource.module.css';
 
-export default function Character({
+export default function Resource({
     id,
     thumbnail,
     name,
-    handleSearchComics
+    onClick
 }) {
     return (
         <div
-            className={styles.characterCard}
+            className={styles.resourceCard}
             style={{
                 background: `url(${thumbnail.path}.${thumbnail.extension})`,
                 backgroundSize: 'cover'
             }}
-            onClick={() => handleSearchComics(id)}
+            onClick={() => onClick(id)}
         >
             <div className={styles.caption}>{name}</div>
             <div className={styles.captionBottom}>View Comics</div>
