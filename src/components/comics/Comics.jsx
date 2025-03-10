@@ -7,6 +7,7 @@ import { generateUrl } from '../../utils.js';
 
 import Spinner from '../spinner/Spinner.jsx';
 import Resource from '../resource/Resource.jsx';
+import ErrorMessage from '../error-message/ErrorMessage.jsx';
 
 export default function Comics() {
     const {
@@ -33,6 +34,8 @@ export default function Comics() {
         <>
             {loading && <Spinner />}
 
+            {!loading && error && <ErrorMessage message={error.message} />}
+
             {data.length !== 0 && (
                 <div className={styles.comics}>
                     {data.map(comicBook => (
@@ -46,7 +49,7 @@ export default function Comics() {
                 </div>
             )}
 
-            {(!loading && data.length === 0) && (
+            {(!loading && !error && data.length === 0) && (
                 <div className={styles.message}>
                     <h3>This character doesn't have any comics</h3>
                 </div>

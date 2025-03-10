@@ -6,6 +6,7 @@ import useFetch from '../../hooks/useFetch.js';
 import { generateUrl } from '../../utils.js';
 
 import Spinner from '../spinner/Spinner.jsx';
+import ErrorMessage from '../error-message/ErrorMessage.jsx';
 
 export default function ComicBook() {
     const {
@@ -28,6 +29,8 @@ export default function ComicBook() {
     return (
         <>
             {loading && <Spinner />}
+
+            {!loading && error && <ErrorMessage message={error.message} />}
 
             {data.length !== 0 && (
                 <div className={styles.container}>

@@ -7,6 +7,7 @@ import useFetch from '../../hooks/useFetch.js';
 
 import Spinner from '../spinner/Spinner.jsx';
 import Resource from '../resource/Resource.jsx';
+import ErrorMessage from '../error-message/ErrorMessage.jsx';
 
 export default function Characters() {
     const {
@@ -38,6 +39,8 @@ export default function Characters() {
         <>
             {loading && <Spinner />}
 
+            {!loading && error && <ErrorMessage message={error.message} />}
+
             {data.length !== 0 && (
                 <div className={styles.characters}>
                     {data.map(character => (
@@ -50,7 +53,7 @@ export default function Characters() {
                 </div>
             )}
 
-            {(!loading && data.length === 0) && (
+            {(!loading && !error && data.length === 0) && (
                 <div className={styles.message}>
                     <h3>There is no matching characters</h3>
                 </div>
