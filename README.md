@@ -1,7 +1,7 @@
 # Marvel Comics
 ## A React-based application that allows users to explore Marvel characters and discover comics related to them.
 
-### You can access deployed app at [Marvel-Comics](marvel-comics-application.netlify.app) or follow the instructions to run it locally.
+### You can access deployed app at [Marvel-Comics](https://marvel-comics-application.netlify.app/) or follow the instructions to run it locally.
 
 
 ### Installation
@@ -37,7 +37,7 @@
 5. Open the app:
 
     Go to http://localhost:5173 (or the displayed port) in your browser.
-    
+
 
 ### Home page with latest updated characters
 ![Image](https://github.com/user-attachments/assets/fc9e6077-d945-4a05-afef-89ee736ff32f)
